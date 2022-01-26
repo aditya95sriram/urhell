@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>URHell</title>
+</head>
+<body>
+    <div id="sandbox">
+        Your webpage here
+    </div>
+    <script type="text/javascript"> 
+        let sandbox = document.getElementById("sandbox");
+        if (location.search.indexOf("content=") >= 0) {
+            let content = location.search.split("content=")[1];
+            sandbox.innerHTML = decodeURIComponent(content);
+        }
+    </script>
+</body>
+</html>
